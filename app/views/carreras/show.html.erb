@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @carrera.nombre %>
+</p>
+
+<p>
+  <b>Codigo:</b>
+  <%= @carrera.codigo %>
+</p>
+
+<p>
+  <b>Perfilingresoresultado:</b>
+  <%= @carrera.perfilIngresoResultado %>
+</p>
+
+<p>
+  <b>Condicionoperacion:</b>
+  <%= @carrera.condicionOperacion %>
+</p>
+
+<p>
+  <b>Capacidadautoregulacion:</b>
+  <%= @carrera.capacidadAutoregulacion %>
+</p>
+
+<p>
+  <b>Cantidadaniosacreditada:</b>
+  <%= @carrera.cantidadAniosAcreditada %>
+</p>
+
+<p>
+  <b>Sede:</b>
+  <%= @carrera.sede.nombre %>
+</p>
+
+
+<%= link_to 'Edit', edit_carrera_path(@carrera) %> |
+<%= link_to 'Back', carreras_path %>

@@ -79,6 +79,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.2)
+    nokogiri (1.5.9)
     polyglot (0.3.3)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
@@ -160,7 +161,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors (>= 0.7.2)
-  binding_of_caller (>= 0.7.1)
+  binding_of_caller
   coffee-rails (~> 3.2.1)
   database_cleaner (>= 1.0.0.RC1)
   email_spec (>= 1.4.0)
@@ -168,6 +169,7 @@ DEPENDENCIES
   jquery-rails
   less-rails (>= 2.2.6)
   libv8 (>= 3.11.8)
+  nokogiri
   quiet_assets (>= 1.0.2)
   rails (= 3.2.13)
   rspec-rails (>= 2.12.2)

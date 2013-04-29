@@ -1,0 +1,37 @@
+<%= link_to "Exportar XML", carreras_path(:format => 'xml')%>
+
+<h1>Listing carreras</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Codigo</th>
+    <th>Perfilingresoresultado</th>
+    <th>Condicionoperacion</th>
+    <th>Capacidadautoregulacion</th>
+    <th>Cantidadaniosacreditada</th>
+    <th>Sede</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @carreras.each do |carrera| %>
+  <tr>
+    <td><%= carrera.nombre %></td>
+    <td><%= carrera.codigo %></td>
+    <td><%= carrera.perfilIngresoResultado %></td>
+    <td><%= carrera.condicionOperacion %></td>
+    <td><%= carrera.capacidadAutoregulacion %></td>
+    <td><%= carrera.cantidadAniosAcreditada %></td>
+    <td><%= carrera.sede.nombre %></td>
+    <td><%= link_to 'Show', carrera %></td>
+    <td><%= link_to 'Edit', edit_carrera_path(carrera) %></td>
+    <td><%= link_to 'Destroy', carrera, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Carrera', new_carrera_path %>

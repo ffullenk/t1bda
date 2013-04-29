@@ -1,0 +1,17 @@
+<%= simple_form_for(@carrera) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+    <%= f.input :codigo %>
+    <%= f.input :perfilIngresoResultado %>
+    <%= f.input :condicionOperacion %>
+    <%= f.input :capacidadAutoregulacion %>
+    <%= f.input :cantidadAniosAcreditada %>
+    <%= f.association :sede, :label_method=> :nombre%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
