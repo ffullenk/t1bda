@@ -22,11 +22,24 @@ class CarrerasController < ApplicationController
         end
 
 
+  data_table = GoogleVisualr::DataTable.new
+
+
+  # Add Column Headers
+data_table.new_column('string', 'Carrera' )
+data_table.new_column('number', 'Años')
+
+
+# Add Rows and Values
+
+@carreras.each do |c|
+  data_table.add_rows([[c.nombre + " - "+ c.sede.nombre + " - " + c.sede.universidad.nombre, c.cantidadAniosAcreditada]])
+  end
 
 
 
-
-
+option = { width: 700, height: 300, title: 'Acreditacion de Carreras' }
+@chart = GoogleVisualr::Interactive::ColumnChart.new(data_table, option)
 
 
 

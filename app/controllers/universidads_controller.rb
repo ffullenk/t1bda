@@ -20,6 +20,39 @@ class UniversidadsController < ApplicationController
 
 
 
+  data_table = GoogleVisualr::DataTable.new
+
+
+  # Add Column Headers
+data_table.new_column('string', 'Universidad' )
+data_table.new_column('number', 'Promedio Años Acreditación')
+
+
+# Add Rows and Values
+
+@universidads.each do |u|
+    carreras = u.carreras
+
+    if (carreras.count > 0) 
+    cantAnios = 0
+
+    carreras.each do |c|
+      cantAnios += c.cantidadAniosAcreditada
+    end
+
+    prom = cantAnios / carreras.count
+
+
+    data_table.add_rows([[u.nombre, prom]])
+
+  end
+end
+
+
+
+option = { width: 700, height: 300, title: 'Promedio Año de Acreditación por Universidad' }
+@chart = GoogleVisualr::Interactive::PieChart.new(data_table, option)
+
 
 
 

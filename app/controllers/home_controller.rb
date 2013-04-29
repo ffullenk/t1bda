@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class HomeController< ApplicationController
 
   def index
   end
@@ -6,9 +6,9 @@ class HomeController < ApplicationController
 
 def exportar
 
-	@universidades = Universidad.all
-	@sedes = Sede.all
-	@carreras = Carrera.all
+    @universidades = Universidad.all
+    @sedes = Sede.all
+    @carreras = Carrera.all
 
 
 
@@ -17,7 +17,7 @@ builder = Nokogiri::XML::Builder.new do |xml|
 xml.acreditacion {
   xml.universidades {
     @universidades.each do |u|
-        xml.universidad do
+    xml.universidad do
       xml.nombre u.nombre
       xml.sedes {
         u.sedes.each do |s|
@@ -47,7 +47,7 @@ end
 
 
 
-	respond_to do |format|
+    respond_to do |format|
         format.xml { render :xml => builder.to_xml }
     end
 

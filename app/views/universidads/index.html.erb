@@ -1,7 +1,7 @@
 
 <%= link_to "Exportar XML", universidads_path(:format => 'xml')%>
 
-<h1>Listing universidads</h1>
+<h1>Listado de Universidades</h1>
 
 <table>
   <tr>
@@ -24,3 +24,7 @@
 <br />
 
 <%= link_to 'New Universidad', new_universidad_path %>
+
+<div id='chart'></div>
+<%= render_chart(@chart, 'chart') %>
+
