@@ -36,3 +36,13 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem "unicorn", ">= 4.3.1"
+gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
+gem "database_cleaner", ">= 1.0.0.RC1", :group => :test
+gem "email_spec", ">= 1.4.0", :group => :test
+gem "less-rails", ">= 2.2.6", :group => :assets
+gem "twitter-bootstrap-rails", ">= 2.2.4", :group => :assets
+gem "libv8", ">= 3.11.8"
+gem "therubyracer", ">= 0.11.3", :group => :assets, :platform => :ruby, :require => "v8"
+gem "simple_form", ">= 2.1.0"
