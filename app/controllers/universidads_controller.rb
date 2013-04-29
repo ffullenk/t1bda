@@ -4,10 +4,32 @@ class UniversidadsController < ApplicationController
   def index
     @universidads = Universidad.all
 
+
+
+        builder = Nokogiri::XML::Builder.new do |xml|
+
+            xml.universidades {
+                @universidads.each do |c|
+                    xml.universidad do
+                      xml.nombre c.nombre
+                      
+                end
+              end
+            }
+        end
+
+
+
+
+
+
+
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @universidads }
-      format.xml { render :xml => @universidads.to_xml }
+      format.xml { render :xml => builder.to_xml }
     end
   end
 

@@ -4,10 +4,36 @@ class CarrerasController < ApplicationController
   def index
     @carreras = Carrera.all
 
+
+    builder = Nokogiri::XML::Builder.new do |xml|
+
+            xml.carreras {
+                @carreras.each do |c|
+                    xml.carrera do
+                      xml.nombre c.nombre
+                      xml.codigo c.codigo
+                      xml.cantidadAniosAcreditada c.cantidadAniosAcreditada
+                      xml.capacidadAutoregulacion c.capacidadAutoregulacion
+                      xml.condicionOperacion c.condicionOperacion
+                      xml.perfilIngresoResultado c.perfilIngresoResultado
+                end
+              end
+            }
+        end
+
+
+
+
+
+
+
+
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @carreras }
-      format.xml { render :xml => @carreras.to_xml }
+      format.xml { render :xml => builder.to_xml }
     end
   end
 

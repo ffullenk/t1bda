@@ -4,10 +4,32 @@ class SedesController < ApplicationController
   def index
     @sedes = Sede.all
 
+
+
+            builder = Nokogiri::XML::Builder.new do |xml|
+
+            xml.sedes {
+                @sedes.each do |c|
+                    xml.sede do
+                      xml.nombre c.nombre
+                      xml.ciudad c.ciudad
+                      
+                end
+              end
+            }
+        end
+
+
+
+
+
+
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @sedes }
-      format.xml { render :xml => @sedes.to_xml }
+      format.xml { render :xml => builder.to_xml }
     end
   end
 
