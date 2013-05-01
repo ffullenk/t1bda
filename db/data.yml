@@ -1,0 +1,83 @@
+
+---
+sedes:
+  columns:
+  - id
+  - nombre
+  - ciudad
+  - universidad_id
+  - created_at
+  - updated_at
+  records: 
+  - - 29
+    - Casa Central
+    - Valparaiso
+    - 25
+    - '2013-05-01 02:51:13.777889'
+    - '2013-05-01 02:51:13.777889'
+  - - 30
+    - VIÑA
+    - viña del mar
+    - 28
+    - '2013-05-01 02:51:14.410740'
+    - '2013-05-01 02:51:14.410740'
+
+---
+carreras:
+  columns:
+  - id
+  - nombre
+  - codigo
+  - perfilIngresoResultado
+  - condicionOperacion
+  - capacidadAutoregulacion
+  - cantidadAniosAcreditada
+  - sede_id
+  - created_at
+  - updated_at
+  records: 
+  - - 53
+    - Ingeniería Civil Informática
+    - '73'
+    - '1'
+    - '1'
+    - '1'
+    - 6
+    - 29
+    - '2013-05-01 02:51:13.899585'
+    - '2013-05-01 02:51:13.899585'
+  - - 54
+    - Ingeniería Civil Industrial
+    - '566'
+    - '3'
+    - '4'
+    - '5'
+    - 4
+    - 30
+    - '2013-05-01 02:51:14.528940'
+    - '2013-05-01 02:51:14.528940'
+
+---
+universidads:
+  columns:
+  - id
+  - nombre
+  - created_at
+  - updated_at
+  records: 
+  - - 25
+    - UTFSM
+    - '2013-05-01 02:51:13.623277'
+    - '2013-05-01 02:51:13.623277'
+  - - 26
+    - UST
+    - '2013-05-01 02:51:14.040680'
+    - '2013-05-01 02:51:14.040680'
+  - - 27
+    - PUC
+    - '2013-05-01 02:51:14.164715'
+    - '2013-05-01 02:51:14.164715'
+  - - 28
+    - UAI
+    - '2013-05-01 02:51:14.283411'
+    - '2013-05-01 02:51:14.283411'

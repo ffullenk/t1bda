@@ -24,5 +24,4 @@ gem "binding_of_caller", :group => :development, :platforms => [:mri_19, :rbx]
 gem 'nokogiri'
 gem 'binding_of_caller'
 gem "google_visualr", ">= 2.1"
-gem "paperclip", "~> 3.0"
-gem 'roxml'
+gem 'yaml_db'
