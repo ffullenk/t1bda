@@ -1,13 +1,13 @@
 # encoding: UTF-8
 class HomeController< ApplicationController
-
+  require 'open-uri'
   def index
   end
 
 
 def importar
 
-  xsd = Nokogiri::XML::Schema(open('http://'+request.host_with_port+'/schema.xsd'))
+  xsd = Nokogiri::XML::Schema(open('http://'+request.host_with_port+'/schema.xsd').read)
 
   xml_doc  = Nokogiri::XML(params[:archivo][:archivo])
 
