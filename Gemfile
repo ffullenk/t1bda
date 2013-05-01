@@ -25,3 +25,4 @@ gem 'nokogiri'
 gem 'binding_of_caller'
 gem "google_visualr", ">= 2.1"
 gem "paperclip", "~> 3.0"
+gem 'roxml'

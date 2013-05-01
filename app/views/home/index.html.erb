@@ -2,3 +2,9 @@
 
 
 <%= link_to "Exportar DB XML", exportar_path(:format => 'xml')%>
+
+
+<%= simple_form_for (:archivo),:url => importar_path(@photo),:html => { :multipart => :true} do |f| %>
+  <%= f.input :archivo, :as => :file %>
+  <%= f.button :submit , "Enviar" %>
+<% end %>

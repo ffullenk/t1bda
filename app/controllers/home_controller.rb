@@ -4,6 +4,61 @@ class HomeController< ApplicationController
   end
 
 
+def importar
+
+  xsd = Nokogiri::XML::Schema(open('http://'+request.host_with_port+'/schema.xsd'))
+
+  xml_doc  = Nokogiri::XML(params[:archivo][:archivo])
+
+
+  result =  xsd.valid?(xml_doc)
+  
+  if !result
+    flash[:error] = "Archivo es inválido"
+  else
+    Universidad.delete_all
+    Sede.delete_all
+    Carrera.delete_all
+
+    universidades_xml = xml_doc.xpath('//universidad')
+
+    universidades_xml.each do |u|
+      universidad = Universidad.new
+      universidad.nombre = u.at_xpath("nombre").content
+      universidad.save
+      sedes_xml = u.xpath(".//sede")
+
+      sedes_xml.each do |s|
+        sede = Sede.new
+        sede.nombre = s.at_xpath("nombre").content
+        sede.ciudad = s.at_xpath("ciudad").content
+        sede.universidad_id = universidad.id
+        sede.save
+        carreras_xml = s.xpath(".//carrera")
+
+        carreras_xml.each do |c|
+          carrera = Carrera.new
+          carrera.nombre = c.at_xpath("nombre").content
+          carrera.codigo = c.at_xpath("codigo").content
+          carrera.cantidadAniosAcreditada = c.at_xpath("cantidadAniosAcreditada").content
+          carrera.capacidadAutoregulacion = c.at_xpath("capacidadAutoregulacion").content
+          carrera.condicionOperacion =  c.at_xpath("condicionOperacion").content
+          carrera.perfilIngresoResultado = c.at_xpath("perfilIngresoResultado").content
+          carrera.sede_id = sede.id
+
+          carrera.save
+        end
+      end
+    end
+
+    flash[:notice] = "Archivo importado exitosamente"
+  end
+
+
+  render 'index'
+
+end
+
 def exportar
 
     @universidades = Universidad.all

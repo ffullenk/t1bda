@@ -12,4 +12,5 @@ T1bda::Application.routes.draw do
 
 
   match "/exportar" => "home#exportar", :as => "exportar"
+  match "/importar" => "home#importar", :as => "importar"
 end
