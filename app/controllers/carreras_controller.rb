@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class CarrerasController < ApplicationController
   # GET /carreras
   # GET /carreras.json

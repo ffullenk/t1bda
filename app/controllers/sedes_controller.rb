@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class SedesController < ApplicationController
   # GET /sedes
   # GET /sedes.json

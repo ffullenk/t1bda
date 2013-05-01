@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class UniversidadsController < ApplicationController
   # GET /universidads
   # GET /universidads.json
