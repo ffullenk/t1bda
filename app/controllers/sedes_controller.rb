@@ -52,7 +52,7 @@ data_table.new_column('number', 'Promedio Años Acreditación')
     prom = cantAnios / carreras.count
 
 
-    data_table.add_rows([[s.nombre, prom]])
+    data_table.add_rows([[s.nombre + " - "+ s.universidad.nombre, prom]])
 
   end
 end
