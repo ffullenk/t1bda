@@ -8,7 +8,7 @@
     <%= f.input :condicionOperacion %>
     <%= f.input :capacidadAutoregulacion %>
     <%= f.input :cantidadAniosAcreditada %>
-    <%= f.association :sede, :label_method=> :nombre%>
+    <%= f.association :sede, :label_method => lambda { |item| "#{item.nombre}" + " - " +" #{item.universidad.nombre}" }%>
   </div>
 
   <div class="form-actions">
