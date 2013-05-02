@@ -1,10 +1,10 @@
-<%= link_to "Exportar XML", sedes_path(:format => 'xml')%>
 <%= form_tag buscar_sede_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Buscar", :name => nil %>
   </p>
 <% end %>
+
 <h1>sedes</h1>
 
 <table class="table table-striped table-bordered">
@@ -30,8 +30,3 @@
 </table>
 
 <br />
-
-<%= link_to 'New Sede', new_sede_path %>
-
-<div id='chart'></div>
-<%= render_chart(@chart, 'chart') %>

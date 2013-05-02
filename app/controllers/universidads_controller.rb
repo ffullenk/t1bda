@@ -67,6 +67,13 @@ option = { width: 700, height: 300, title: 'Promedio Año de Acreditación por U
     end
   end
 
+
+  def buscar
+    @universidads = Universidad.search(params[:search])
+  end
+
+
+
   # GET /universidads/1
   # GET /universidads/1.json
   def show

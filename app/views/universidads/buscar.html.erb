@@ -1,14 +1,9 @@
-
-<%= link_to "Exportar XML", universidads_path(:format => 'xml')%>
-
 <%= form_tag buscar_universidad_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Buscar", :name => nil %>
   </p>
 <% end %>
-
-
 <h1>Listado de Universidades</h1>
 
 
@@ -34,8 +29,6 @@
 
 <br />
 
-<%= link_to 'New Universidad', new_universidad_path %>
 
-<div id='chart'></div>
-<%= render_chart(@chart, 'chart') %>
+
 

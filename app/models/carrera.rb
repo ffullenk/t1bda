@@ -21,4 +21,14 @@ class Carrera < ActiveRecord::Base
   validates :perfilIngresoResultado, :inclusion => { :in => 1..5, :message => "Debe estar entre 1-5" }
 
 
+
+
+  def self.search(search)
+  if search
+    find(:all, :conditions => ['nombre LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
+
 end

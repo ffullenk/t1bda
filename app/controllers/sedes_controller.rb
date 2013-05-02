@@ -1,5 +1,13 @@
 # encoding: UTF-8
 class SedesController < ApplicationController
+
+
+
+    def buscar
+    @sedes = Sede.search(params[:search])
+  end
+
+  
   # GET /sedes
   # GET /sedes.json
   def index
@@ -53,13 +61,6 @@ end
 
 option = { width: 700, height: 300, title: 'Promedio Año de Acreditación por Sede' }
 @chart = GoogleVisualr::Interactive::PieChart.new(data_table, option)
-
-
-
-
-
-
-
 
 
 

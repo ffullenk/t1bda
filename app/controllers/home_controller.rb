@@ -1,6 +1,7 @@
 # encoding: UTF-8
 class HomeController< ApplicationController
   require 'open-uri'
+
   def index
   end
 
@@ -104,7 +105,7 @@ end
 
 
     respond_to do |format|
-        format.xml { render :xml => builder.to_xml }
+        format.xml { render :xml =>  builder.to_xml }
     end
 
 

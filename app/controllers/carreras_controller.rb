@@ -1,5 +1,10 @@
 # encoding: UTF-8
-class CarrerasController < ApplicationController
+class CarrerasController< ApplicationController
+
+  def buscar
+    @carreras = Carrera.search(params[:search])
+  end
+
   # GET /carreras
   # GET /carreras.json
   def index
@@ -47,7 +52,8 @@ option = { width: 700, height: 300, title: 'Acreditacion de Carreras' }
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @carreras }
-      format.xml { render :xml => builder.to_xml }
+      format.xml { render :xml =>
+  builder.to_xml }
     end
   end
 
