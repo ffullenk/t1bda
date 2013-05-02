@@ -21,6 +21,42 @@ class SedesController < ApplicationController
         end
 
 
+     data_table = GoogleVisualr::DataTable.new
+
+
+  # Add Column Headers
+data_table.new_column('string', 'Sede' )
+data_table.new_column('number', 'Promedio Años Acreditación')
+
+
+# Add Rows and Values
+
+@sedes.each do |s|
+    carreras = s.carreras
+
+    if (carreras.count > 0) 
+    cantAnios = 0
+
+    carreras.each do |c|
+      cantAnios += c.cantidadAniosAcreditada
+    end
+
+    prom = cantAnios / carreras.count
+
+
+    data_table.add_rows([[s.nombre, prom]])
+
+  end
+end
+
+
+
+option = { width: 700, height: 300, title: 'Promedio Año de Acreditación por Sede' }
+@chart = GoogleVisualr::Interactive::PieChart.new(data_table, option)
+
+
+
+
 
 
 

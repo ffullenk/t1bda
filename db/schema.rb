@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429195252) do
+ActiveRecord::Schema.define(:version => 20130502193411) do
 
   create_table "carreras", :force => true do |t|
     t.string   "nombre"
-    t.string   "codigo"
-    t.string   "perfilIngresoResultado"
-    t.string   "condicionOperacion"
-    t.string   "capacidadAutoregulacion"
+    t.integer  "codigo",                  :limit => 255
+    t.integer  "perfilIngresoResultado",  :limit => 255
+    t.integer  "condicionOperacion",      :limit => 255
+    t.integer  "capacidadAutoregulacion", :limit => 255
     t.integer  "cantidadAniosAcreditada"
     t.integer  "sede_id"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   add_index "carreras", ["sede_id"], :name => "index_carreras_on_sede_id"
